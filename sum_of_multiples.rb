@@ -8,7 +8,7 @@ class SumOfMultiples
 
     arr.keep_if do |num|
       multiples.map { |mult| num % mult == 0 }.any?
-    end.sum
+    end.inject(:+) || 0
   end
 
   def multiples
